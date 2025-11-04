@@ -23,10 +23,8 @@ class LemuroidInputDeviceGamePad(private val device: InputDevice) : LemuroidInpu
 
         val defaultOverride =
             bindingsOf(
-                KeyEvent.KEYCODE_BUTTON_A to KeyEvent.KEYCODE_BUTTON_B,
-                KeyEvent.KEYCODE_BUTTON_B to KeyEvent.KEYCODE_BUTTON_A,
-                KeyEvent.KEYCODE_BUTTON_X to KeyEvent.KEYCODE_BUTTON_Y,
-                KeyEvent.KEYCODE_BUTTON_Y to KeyEvent.KEYCODE_BUTTON_X,
+                // 1:1 direct mapping - no button swap
+                // A -> A, B -> B, X -> X, Y -> Y
             )
 
         return allAvailableInputs + defaultOverride

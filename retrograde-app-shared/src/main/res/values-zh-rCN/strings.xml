@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="local_storage">本地存储</string>
+
+    <string name="controller_arcade_4">默认（4 按钮）</string>
+    <string name="controller_arcade_6">默认（6 按钮）</string>
+
+    <string name="controller_genesis_3">默认（3 按钮）</string>
+    <string name="controller_genesis_6">默认（6 按钮）</string>
+
+    <string name="controller_default">默认</string>
+    <string name="controller_dualshock">DualShock</string>
+    <string name="controller_standard">标准</string>
+    <string name="controller_landscape">横屏</string>
+    <string name="controller_portrait">竖屏</string>
+
+    <string name="controller_dos_auto">自动</string>
+    <string name="controller_dos_mouse_left">左摇杆鼠标</string>
+    <string name="controller_dos_mouse_right">右摇杆鼠标</string>
+
+    <!-- Core settings titles -->
+    <string name="setting_stella_filter">电视效果</string>
+    <string name="setting_stella_crop_hoverscan">裁剪水平过扫描</string>
+    <string name="setting_fceumm_overscan_h">裁剪水平过扫描</string>
+    <string name="setting_fceumm_overscan_v">裁剪垂直过扫描</string>
+    <string name="setting_fceumm_nospritelimit">无精灵限制</string>
+    <string name="setting_genesis_plus_gx_blargg_ntsc_filter">电视效果</string>
+    <string name="setting_genesis_plus_gx_overscan">边框</string>
+    <string name="setting_genesis_plus_gx_lcd_filter">LCD 残影</string>
+    <string name="setting_genesis_plus_gx_no_sprite_limit">无精灵限制</string>
+    <string name="setting_gambatte_gb_colorization">着色</string>
+    <string name="setting_gambatte_gb_internal_palette">内部调色板</string>
+    <string name="setting_gambatte_mix_frames">LCD 残影</string>
+    <string name="setting_gambatte_dark_filter_level">变暗屏幕</string>
+    <string name="setting_gambatte_gbc_color_correction">色彩校正</string>
+    <string name="setting_mgba_solar_sensor_level">太阳能传感器级别</string>
+    <string name="setting_mgba_interframe_blending">LCD 残影</string>
+    <string name="setting_mgba_frameskip">跳帧</string>
+    <string name="setting_mgba_color_correction">色彩校正</string>
+    <string name="setting_mupen64plus_43screensize">4:3 屏幕尺寸</string>
+    <string name="setting_mupen64plus_cpucore">动态重编译</string>
+    <string name="setting_mupen64plus_BilinearMode">双线性模式</string>
+    <string name="setting_mupen64plus_pak1">玩家 1 扩展卡</string>
+    <string name="setting_mupen64plus_pak2">玩家 2 扩展卡</string>
+    <string name="setting_pcsx_rearmed_frameskip">跳帧</string>
+    <string name="setting_pcsx_rearmed_drc">动态重编译</string>
+    <string name="setting_ppsspp_auto_frameskip">自动跳帧</string>
+    <string name="setting_ppsspp_frameskip">跳帧</string>
+    <string name="setting_ppsspp_cpu_core">动态重编译</string>
+    <string name="setting_ppsspp_internal_resolution">分辨率</string>
+    <string name="setting_ppsspp_texture_scaling_level">纹理缩放级别</string>
+    <string name="setting_ppsspp_texture_scaling_type">纹理缩放类型</string>
+    <string name="setting_ppsspp_texture_filtering">纹理过滤</string>
+    <string name="setting_fbneo_frameskip">跳帧</string>
+    <string name="setting_fbneo_cpu_speed_adjust">CPU 速度</string>
+    <string name="setting_desmume_screens_layout">屏幕布局</string>
+    <string name="setting_desmume_frameskip">跳帧</string>
+    <string name="setting_melonds_screen_layout">屏幕布局</string>
+    <string name="setting_melonds_threaded_renderer">多线程渲染</string>
+    <string name="setting_melonds_jit_enable">动态重编译</string>
+    <string name="setting_melonds_mic_input">麦克风模式</string>
+    <string name="setting_wswan_rotate_display">方向</string>
+    <string name="setting_wswan_mono_palette">着色</string>
+    <string name="setting_handy_rot">显示旋转</string>
+    <string name="setting_citra_layout_option">屏幕布局</string>
+    <string name="setting_citra_resolution_factor">分辨率缩放</string>
+    <string name="setting_citra_use_acc_mul">精确着色器乘法</string>
+    <string name="setting_citra_use_acc_geo_shaders">精确几何着色器</string>
+
+    <!-- Core settings values. Duplicated here to ease the translation process. -->
+    <string name="value_gambatte_mix_frames_disabled">已禁用</string>
+    <string name="value_gambatte_mix_frames_mix">简单</string>
+    <string name="value_gambatte_mix_frames_lcd_ghosting">LCD 残影（精确）</string>
+    <string name="value_gambatte_mix_frames_lcd_ghosting_fast">LCD 残影（快速）</string>
+    <string name="value_gambatte_gbc_color_correction_always">已启用</string>
+    <string name="value_gambatte_gbc_color_correction_disabled">已禁用</string>
+
+    <string name="value_mgba_interframe_blending_off">已禁用</string>
+    <string name="value_mgba_interframe_blending_mix">简单</string>
+    <string name="value_mgba_interframe_blending_lcd_ghosting">LCD 残影（精确）</string>
+    <string name="value_mgba_interframe_blending_lcd_ghosting_fast">LCD 残影（快速）</string>
+
+    <string name="value_mgba_frameskip_disabled">已禁用</string>
+    <string name="value_mgba_frameskip_auto">自动</string>
+
+    <string name="value_mgba_color_correction_off">已禁用</string>
+    <string name="value_mgba_color_correction_gba">已启用</string>
+
+    <string name="value_stella_filter_disabled">已禁用</string>
+    <string name="value_stella_filter_composite">复合</string>
+    <string name="value_stella_filter_svideo">S-Video</string>
+    <string name="value_stella_filter_rgb">RGB</string>
+    <string name="value_stella_filter_badlyadjusted">调整不当</string>
+
+    <string name="value_genesis_plus_gx_blargg_ntsc_filter_disabled">已禁用</string>
+    <string name="value_genesis_plus_gx_blargg_ntsc_filter_monochrome">单色</string>
+    <string name="value_genesis_plus_gx_blargg_ntsc_filter_composite">复合</string>
+    <string name="value_genesis_plus_gx_blargg_ntsc_filter_svideo">S-Video</string>
+    <string name="value_genesis_plus_gx_blargg_ntsc_filter_rgb">RGB</string>
+
+    <string name="value_genesis_plus_gx_overscan_disabled">已禁用</string>
+    <string name="value_genesis_plus_gx_overscan_topbottom">上/下</string>
+    <string name="value_genesis_plus_gx_overscan_leftright">左/右</string>
+    <string name="value_genesis_plus_gx_overscan_full">完整</string>
+
+    <string name="value_mupen64plus_cpucore_dynamicrecompiler">动态重编译</string>
+    <string name="value_mupen64plus_cpucore_pureinterpreter">纯解释器</string>
+    <string name="value_mupen64plus_cpucore_cachedinterpreter">缓存解释器</string>
+
+    <string name="value_mupen64plus_bilinearmode_standard">标准</string>
+    <string name="value_mupen64plus_bilinearmode_3point">3 点</string>
+
+    <string name="value_mupen64plus_mupen64plus_pak1_memory">记忆卡</string>
+    <string name="value_mupen64plus_mupen64plus_pak1_rumble">震动</string>
+    <string name="value_mupen64plus_mupen64plus_pak1_none">无</string>
+
+    <string name="value_mupen64plus_mupen64plus_pak2_none">无</string>
+    <string name="value_mupen64plus_mupen64plus_pak2_rumble">震动</string>
+
+    <string name="value_melonds_screen_layout_topbottom">上 - 下</string>
+    <string name="value_melonds_screen_layout_leftright">左 - 右</string>
+    <string name="value_melonds_screen_layout_hybridtop">混合上部</string>
+    <string name="value_melonds_screen_layout_hybridbottom">混合下部</string>
+    <string name="value_melonds_mic_input_microphone">真实麦克风</string>
+    <string name="value_melonds_mic_input_blow">模拟吹气声</string>
+
+    <string name="value_citra_layout_option_topbottom">上 - 下</string>
+    <string name="value_citra_layout_option_sidebyside">左 - 右</string>
+
+    <string name="value_desmume_screens_layout_topbottom">上 - 下</string>
+    <string name="value_desmume_screens_layout_leftright">左 - 右</string>
+
+    <string name="value_ppsspp_cpu_core_jit">JIT</string>
+    <string name="value_ppsspp_cpu_core_irjit">IR JIT</string>
+    <string name="value_ppsspp_cpu_core_interpreter">解释器</string>
+
+    <string name="value_wswan_rotate_display_landscape">横屏</string>
+    <string name="value_wswan_rotate_display_portrait">竖屏</string>
+
+    <string name="value_handy_rot_none">0</string>
+    <string name="value_handy_rot_90">90</string>
+    <string name="value_handy_rot_270">270</string>
+
+</resources>
+

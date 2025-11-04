@@ -93,8 +93,8 @@ android {
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = true
-            signingConfig = signingConfigs["release"]
+            isMinifyEnabled = true  // 启用代码混淆和优化，提升性能
+            signingConfig = signingConfigs["debug"]  // 使用 debug 签名以简化构建
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
             resValue("string", "lemuroid_name", "Lemuroid")
         }
