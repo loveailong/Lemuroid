@@ -24,56 +24,32 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
       - name: Configure Gradle memory settings
         run: |
-          echo "org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g -XX:+HeapDumpOnOutOfMemoryError" >> gradle.properties
+          echo "org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g" >> gradle.properties
           echo "org.gradle.parallel=false" >> gradle.properties
           echo "org.gradle.daemon=false" >> gradle.properties
-          cat gradle.properties
 
-      - name: Download Lemuroid cores
-        run: |
-          echo "Downloading cores from LibRetro buildbot..."
-          cd lemuroid-cores/bundled-cores/src/main/jniLibs
-          
-          cores=("stella" "fceumm" "snes9x" "genesis_plus_gx" "gambatte" "melonds" "mgba" "mupen64plus_next_gles3" "pcsx_rearmed" "ppsspp" "fbneo" "desmume" "mame2003_plus" "prosystem" "handy" "mednafen_pce_fast" "dosbox_pure" "mednafen_ngp" "mednafen_wswan" "citra")
-          archs=("armeabi-v7a" "arm64-v8a" "x86" "x86_64")
-          baseurl="https://buildbot.libretro.com/nightly/android/latest"
-          
-          for core in "${cores[@]}"; do
-            for arch in "${archs[@]}"; do
-              echo "Downloading $core for $arch..."
-              mkdir -p $arch
-              wget -q "$baseurl/$arch/${core}_libretro_android.so.zip" -O "$arch/${core}.zip" || continue
-              unzip -q -o "$arch/${core}.zip" -d "$arch/"
-              rm "$arch/${core}.zip"
-            done
-          done
-          
-          echo "Core download completed!"
-
-      - name: Build Debug APK
-        run: ./gradlew assembleFreeBundleDebug --stacktrace
+      - name: Build Dynamic Release APK (cores downloaded at runtime)
+        run: ./gradlew assembleFreeDynamicRelease --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: lemuroid-custom-debug
-          path: lemuroid-app/build/outputs/apk/freeBundle/debug/lemuroid-app-free-bundle-debug.apk
+          name: lemuroid-custom-dynamic-release
+          path: lemuroid-app/build/outputs/apk/freeDynamic/release/lemuroid-app-free-dynamic-release.apk
           retention-days: 30
 
       - name: Upload APK as Release (on tag push)
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: lemuroid-app/build/outputs/apk/freeBundle/debug/lemuroid-app-free-bundle-debug.apk
+          files: lemuroid-app/build/outputs/apk/freeDynamic/release/lemuroid-app-free-dynamic-release.apk
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
