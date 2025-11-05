@@ -30,19 +30,19 @@ jobs:
 
       - name: Configure Gradle memory settings
         run: |
-          echo "org.gradle.jvmargs=-Xmx6g -XX:MaxMetaspaceSize=1g -XX:+UseG1GC" >> gradle.properties
+          echo "org.gradle.jvmargs=-Xmx5g -XX:MaxMetaspaceSize=512m -XX:+UseG1GC" >> gradle.properties
           echo "org.gradle.parallel=false" >> gradle.properties
           echo "org.gradle.daemon=false" >> gradle.properties
-          echo "org.gradle.configureondemand=true" >> gradle.properties
+          echo "kotlin.incremental=false" >> gradle.properties
 
-      - name: Download Popular Lemuroid cores (8 most common systems)
+      - name: Download 4 Essential Cores (ARM only)
         run: |
-          echo "Downloading most popular cores from LibRetro buildbot..."
+          echo "Downloading 4 essential cores (ARM only)..."
           cd lemuroid-cores/bundled-cores/src/main/jniLibs
           
-          # 只下载最常用的 8 个核心，减少 APK 大小和内存占用
-          cores=("snes9x" "mgba" "gambatte" "genesis_plus_gx" "fceumm" "mupen64plus_next_gles3" "pcsx_rearmed" "ppsspp")
-          archs=("armeabi-v7a" "arm64-v8a" "x86" "x86_64")
+          # 只下载4个最常用的核心，只下载ARM架构
+          cores=("snes9x" "mgba" "gambatte" "fceumm")
+          archs=("armeabi-v7a" "arm64-v8a")
           baseurl="https://buildbot.libretro.com/nightly/android/latest"
           
           for core in "${cores[@]}"; do
@@ -55,15 +55,15 @@ jobs:
             done
           done
           
-          echo "Core download completed! Downloaded 8 cores."
+          echo "Download completed! 4 cores (SNES, GBA, GB/GBC, NES) - ARM only"
 
-      - name: Build Bundle Release APK (with R8 optimization)
-        run: ./gradlew assembleFreeBundleRelease --stacktrace
+      - name: Build Bundle Release APK (4 cores, ARM only)
+        run: ./gradlew assembleFreeBundleRelease --no-daemon --no-build-cache --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: lemuroid-custom-8cores-release
+          name: lemuroid-custom-4cores-arm-release
           path: lemuroid-app/build/outputs/apk/freeBundle/release/lemuroid-app-free-bundle-release.apk
           retention-days: 30
 
